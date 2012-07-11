@@ -6,6 +6,7 @@ function getValue( content ){
 }
 
 function setValue( content, value ){
+	value = value.replace('*', '★');
        	var object = Contents.findOne({id: content});
         if( object ){
        	        Contents.update({id: content}, {$set: {value: value}});
