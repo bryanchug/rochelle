@@ -1,0 +1,6 @@
+/* Font-Face */
+@font-face {
+    font-family: 'ChopinScript';
+    src: url(chopinscript.ttf) format('truetype');
+}
+
