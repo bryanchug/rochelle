@@ -3,12 +3,17 @@
 @import url(/fonts/chopinscript/chopinscript.css);
 
 html{
-	margin: 0;
+	margin: 0 !important;
 	background: #000;
+	overflow: hidden !important;
+}
+body{
+	margin: 0 !important;
 }
 video{
 	display: block;
 	margin: 0 auto;
+	width: 100%;
 }
 #content{
 	position: absolute;
