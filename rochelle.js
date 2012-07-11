@@ -21,6 +21,13 @@ if (Meteor.is_client) {
 	Template.content.subtitle = function() {
 		return getValue("subtitle") || "PEARLMONT INN ★ JULY 14, 2012";
 	};
+	Template.content.events = {
+		'blur input': function(e){
+			var content = e.target.id;
+			var value = e.target.value;
+			setValue( content, value );
+		}
+	}
 }
 
 if (Meteor.is_server) {
