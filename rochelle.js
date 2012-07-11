@@ -1,15 +1,26 @@
-if (Meteor.is_client) {
-  Template.hello.greeting = function () {
-    return "Welcome to rochelle.";
-  };
+Contents = new Meteor.Collection("contents");
 
-  Template.hello.events = {
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  };
+function getValue( content ){
+	var object = Contents.findOne({id: content});
+        return object ? object.value : "";
+}
+
+function setValue( content, value ){
+       	var object = Contents.findOne({id: content});
+        if( object ){
+       	        Contents.update({id: content}, {$set: {value: value}});
+        }else{
+             	Contents.insert({id: content, value: value});
+        }
+}
+
+if (Meteor.is_client) {
+	Template.content.title = function () {
+		return getValue("title") || "Rochelle @ 18";
+	};
+	Template.content.subtitle = function() {
+		return getValue("subtitle") || "PEARLMONT INN ★ JULY 14, 2012";
+	};
 }
 
 if (Meteor.is_server) {
