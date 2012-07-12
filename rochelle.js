@@ -2,7 +2,7 @@ Contents = new Meteor.Collection("contents");
 
 function getValue( content ){
 	var object = Contents.findOne({id: content});
-        return object ? object.value : null;
+        return object ? object.value : "";
 }
 
 function setValue( content, value ){
