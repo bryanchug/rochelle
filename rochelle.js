@@ -6,7 +6,7 @@ function getValue( content ){
 }
 
 function setValue( content, value ){
-	value = value.replace('*', '★');
+	value = value.replace(/\*/g, '★');
        	var object = Contents.findOne({id: content});
         if( object ){
        	        Contents.update({id: content}, {$set: {value: value}});
@@ -17,12 +17,10 @@ function setValue( content, value ){
 
 if (Meteor.is_client) {
 	Template.content.title = function () {
-		var value = getValue("title");
-		return value != null ? value : "Rochelle @ 18";
+		return getValue("title");
 	};
 	Template.content.subtitle = function() {
-		var value = getValue("subtitle");
-		return value != null ? value : "PEARLMONT INN ★ JULY 14, 2012";
+		return getValue("subtitle");
 	};
 	Template.content.events = {
 		'blur input': function(e){
