@@ -8,12 +8,17 @@
 
 <template name="content">
 	<div id="content">
-		<div id="text">
-<textarea id="newText">
-{{text}}</textarea>
-<textarea id="oldText" disabled="disabled">
-{{oldText}}</textarea>
-		</div>
+
+<textarea class="new" name="txt1">
+{{txt1}}</textarea>
+<textarea class="new" name="txt2">
+{{txt2}}</textarea>
+
+<textarea class="old" name="txt1" disabled="disabled">
+{{txt1old}}</textarea>
+<textarea class="old" name="txt2" disabled="disabled">
+{{txt2old}}</textarea>
+
 	</div>
 </template>
 

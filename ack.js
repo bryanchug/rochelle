@@ -16,34 +16,50 @@ function setValue( content, value ){
 }
 
 if (Meteor.is_client) {
-	var oldText = '';
-	Template.content.text = function () {
-		var text = getValue("text");
-		console.log( oldText );
-		console.log( text );
-		console.log( oldText != text );
-		if( oldText != text ){
+
+	var _txt1old = '';
+
+	Template.content.txt1 = function () {
+		var _txt1 = getValue("txt1");
+		if( _txt1old != _txt1 ){
 			setTimeout(function(){
-				$("#oldText").fadeOut('slow');
-				$("#newText").hide().fadeIn('slow');
-				oldText = text;
+				var txt = $("#txt1");
+				txt.find(".old").fadeOut('slow');
+				txt.find(".new").hide().fadeIn('slow');
+				_txt1Old = _txt1;
 			});
 		}
-		return text;
+		return _txt1;
 	};
-	Template.content.oldText = function(){
-		setTimeout(function(){
-			//$("#oldText").fadeIn();
-		});
-		return oldText;
+	Template.content.txt1old = function(){
+		return _txt1old;
+	};
+
+	var _txt2old = '';
+
+	Template.content.txt2 = function(){
+                var _txt2 = getValue("txt2");
+                if( _txt2old != _txt2 ){
+                        setTimeout(function(){
+                                var txt = $("#txt2");
+                                txt.find(".old").fadeOut('slow');
+                                txt.find(".new").hide().fadeIn('slow');
+                                _txt2Old = _txt2;
+                        });
+                }
+                return _txt2;
+	};
+	Template.content.txt2old = function(){
+		return _txt2old;
 	}
+
 	Template.content.events = {
-		'blur #newText': function(e){
-			var content = $(e.target).parent().attr('id');
+		'blur .new': function(e){
+			var content = $(e.target).attr('name');
 			var value = e.target.value;
 			setValue( content, value );
 		}
-	}
+	};
 }
 
 if (Meteor.is_server) {
