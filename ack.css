@@ -5,6 +5,7 @@
 	height: 100%;
 }
 textarea{
+	position: absolute;
 	outline: none;
 	font-family: 'Proxima';
 	font-size: 40px;
@@ -16,4 +17,10 @@ textarea{
 	font-weight: bold;
 	background: none;
 	color: #111346;
+}
+#newText{
+	z-index: 100;
+}
+#oldText{
+	z-index: 10;
 }

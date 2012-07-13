@@ -15,9 +15,8 @@ function setValue( content, value ){
         }
 }
 
-var oldText = null;
-
 if (Meteor.is_client) {
+	var oldText = '';
 	Template.content.text = function () {
 		var text = getValue("text");
 		console.log( oldText );
@@ -25,14 +24,21 @@ if (Meteor.is_client) {
 		console.log( oldText != text );
 		if( oldText != text ){
 			setTimeout(function(){
-				$("textarea").hide().fadeIn();
+				$("#oldText").fadeOut('slow');
+				$("#newText").hide().fadeIn('slow');
+				oldText = text;
 			});
 		}
-		oldText = text;
 		return text;
 	};
+	Template.content.oldText = function(){
+		setTimeout(function(){
+			//$("#oldText").fadeIn();
+		});
+		return oldText;
+	}
 	Template.content.events = {
-		'blur textarea': function(e){
+		'blur #newText': function(e){
 			var content = $(e.target).parent().attr('id');
 			var value = e.target.value;
 			setValue( content, value );
