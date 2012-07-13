@@ -19,33 +19,45 @@ video{
 	z-index: 10;
 	width: 100%;
 }
-[type=text]{
-	color: #111346;
-	background: none;
-	display: block;
-	border: none;
-	font-size: 25px;
-	width: 100%;
-	outline: none;
-	text-align: center;
+
+#content{
+	height: 100%;
 }
-#title, #subtitle{
+#text{
+	height: 100%;
+}
+textarea{
 	position: absolute;
+	outline: none;
+	font-size: 40px;
 	width: 100%;
+	height: 100%;
+	margin: 0;
+	border: none;
+	text-align: center;
+	background: none;
+	color: #111346;
 }
-#title{
-	top: 238px;
+.new{
+	z-index: 100;
 }
-#subtitle{
-	top: 404px;
+.old{
+	z-index: 10;
+	color: brown;
 }
-#subtitle [type=text]{
-	font-size: 54px;
-	height: 100px;
-	line-height: 100px;
+
+textarea[name=txt1]{
 	font-family: 'Proxima';
+	font-size: 54px;
 }
-#title [type=text]{
+textarea[name=txt2]{
 	font-family: 'ChopinScript';
 	font-size: 164px;
+}
+
+.new[name=txt1]{
+	z-index: 110;
+}
+.new[name=txt2]{
+	z-index: 100;
 }
