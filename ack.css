@@ -21,6 +21,7 @@ textarea{
 }
 .old{
 	z-index: 10;
+	color: brown;
 }
 
 textarea[name=txt1]{
@@ -33,7 +34,7 @@ textarea[name=txt2]{
 }
 
 .new[name=txt1]{
-	z-index: 105;
+	z-index: 110;
 }
 .new[name=txt2]{
 	z-index: 100;

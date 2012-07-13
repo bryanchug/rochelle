@@ -53,13 +53,26 @@ if (Meteor.is_client) {
 		return _txt2old;
 	}
 
+	/*
 	Template.content.events = {
 		'blur .new': function(e){
 			var content = $(e.target).attr('name');
 			var value = e.target.value;
+			console.log("content: "+content);
 			setValue( content, value );
 		}
 	};
+	*/
+	
+	$(document).keydown(function(e){
+		var ESC = 27;
+		if(e.keyCode == ESC){
+			$(".new").each(function(){
+				var content = $(this).attr('name');
+				setValue( content, $(this).val() );
+			});
+		}
+	});
 }
 
 if (Meteor.is_server) {
