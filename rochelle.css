@@ -51,7 +51,9 @@ textarea[name=txt1]{
 }
 textarea[name=txt2]{
 	font-family: 'ChopinScript';
-	font-size: 164px;
+	/* font-size: 120px; */
+	font-size: 164px; 
+	line-height: 50px;
 }
 
 .new[name=txt1]{
