@@ -16,14 +16,11 @@ function setValue( content, value ){
 }
 
 if (Meteor.is_client) {
-	Template.content.title = function () {
-		return getValue("title");
-	};
-	Template.content.subtitle = function() {
-		return getValue("subtitle");
+	Template.content.text = function () {
+		return getValue("text");
 	};
 	Template.content.events = {
-		'blur input': function(e){
+		'blur textarea': function(e){
 			var content = $(e.target).parent().attr('id');
 			var value = e.target.value;
 			setValue( content, value );

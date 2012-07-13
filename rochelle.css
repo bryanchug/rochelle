@@ -1,0 +1,51 @@
+/* CSS declarations go here */
+@import url(/fonts/proximanova/proximanova.css);
+@import url(/fonts/chopinscript/chopinscript.css);
+
+html{
+	margin: 0 !important;
+	background: #000;
+	overflow: hidden !important;
+}
+body{
+	margin: 0 !important;
+}
+video{
+	display: block;
+	margin: 0 auto;
+}
+#content{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+}
+[type=text]{
+	color: #111346;
+	background: none;
+	display: block;
+	border: none;
+	font-size: 25px;
+	width: 100%;
+	outline: none;
+	text-align: center;
+}
+#title, #subtitle{
+	position: absolute;
+	width: 100%;
+}
+#title{
+	top: 238px;
+}
+#subtitle{
+	top: 404px;
+}
+#subtitle [type=text]{
+	font-size: 54px;
+	height: 100px;
+	line-height: 100px;
+	font-family: 'Proxima';
+}
+#title [type=text]{
+	font-family: 'ChopinScript';
+	font-size: 164px;
+}
