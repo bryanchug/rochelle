@@ -15,6 +15,7 @@ function setValue( content, value ){
         }
 }
 
+
 if (Meteor.is_client) {
 
 	var _txt1old = '';
@@ -23,10 +24,9 @@ if (Meteor.is_client) {
 		var _txt1 = getValue("txt1");
 		if( _txt1old != _txt1 ){
 			setTimeout(function(){
-				var txt = $("#txt1");
-				txt.find(".old").fadeOut('slow');
-				txt.find(".new").hide().fadeIn('slow');
-				_txt1Old = _txt1;
+				$(".old[name=txt1]").fadeOut('slow');
+				$(".new[name=txt1]").hide().fadeIn('slow');
+				_txt1old = _txt1;
 			});
 		}
 		return _txt1;
@@ -41,10 +41,9 @@ if (Meteor.is_client) {
                 var _txt2 = getValue("txt2");
                 if( _txt2old != _txt2 ){
                         setTimeout(function(){
-                                var txt = $("#txt2");
-                                txt.find(".old").fadeOut('slow');
-                                txt.find(".new").hide().fadeIn('slow');
-                                _txt2Old = _txt2;
+                                $(".old[name=txt2]").fadeOut('slow');
+                                $(".new[name=txt2]").hide().fadeIn('slow');
+                                _txt2old = _txt2;
                         });
                 }
                 return _txt2;

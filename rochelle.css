@@ -43,7 +43,6 @@ textarea{
 }
 .old{
 	z-index: 10;
-	color: brown;
 }
 
 textarea[name=txt1]{
