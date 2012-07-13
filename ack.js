@@ -15,9 +15,21 @@ function setValue( content, value ){
         }
 }
 
+var oldText = null;
+
 if (Meteor.is_client) {
 	Template.content.text = function () {
-		return getValue("text");
+		var text = getValue("text");
+		console.log( oldText );
+		console.log( text );
+		console.log( oldText != text );
+		if( oldText != text ){
+			setTimeout(function(){
+				$("textarea").hide().fadeIn();
+			});
+		}
+		oldText = text;
+		return text;
 	};
 	Template.content.events = {
 		'blur textarea': function(e){
